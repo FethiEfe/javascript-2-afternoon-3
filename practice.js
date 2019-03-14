@@ -28,6 +28,11 @@
 */
 
 // Code Here 
+function first (array , callback){
+callback(array[0]) ;
+};
+
+
 
 // Do not edit the code below.
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
@@ -48,6 +53,11 @@ first(names, function(firstName){
 */
 
 //Code Here
+function last(array,callback){
+callback(array[array.length -1]);
+};
+
+
 
 // Do not edit the code below.
 last(names, function(lastName){
@@ -66,7 +76,11 @@ last(names, function(lastName){
 */
 
 //Code Here
+function multiply(num1,num2,callback){
+  
+  callback(num1 * num2)
 
+};
 // Do not edit the code below.
 multiply(4, 3, function(answer){
   console.log('The answer is ' + answer); //should console.log 12
@@ -84,8 +98,18 @@ multiply(4, 3, function(answer){
   If the name does not exist, invoke the callback with false as the argument.
 */
 
-//Code Here 
 
+
+
+//Code Here 
+function contains(arr,name,callback){
+  if(arr.includes(name)){
+   callback(true);
+  }else{
+   callback(false);
+  }
+  
+}
 // Do not edit the code below.
 contains(names, 'Colt', function(result){
   if(result === true){
@@ -123,7 +147,11 @@ uniq(names, function(uniqArr){
 */
 
 //Code Here 
-
+function each(arr,callback){
+  for(var i = 0; i < arr.length; i++){
+     callback(arr[i], i)
+  }
+}
 // Do not edit the code below.
 each(names, function(item, indice){
   console.log('The item in the ' + indice + ' position is ' + item)
@@ -140,7 +168,13 @@ each(names, function(item, indice){
 */
 
 // Code here
-
+ function getUserById(arr, id, callback){
+  for(let i = 0; i < arr.length; i++){
+    if (id === arr[i].id){
+      return callback(arr[i])
+    }
+  }
+ }
 // Do not edit the code below.
 var users = [
   {
