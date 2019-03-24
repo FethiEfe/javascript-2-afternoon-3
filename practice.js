@@ -137,6 +137,16 @@ uniq(names, function(uniqArr){
 });
 // Do not edit the code above.
 
+function uniq(names, callback) {
+  for (let i = 0; i < names.length; i++) {
+    for (let k = i + 1; k < names.length; k++) {
+      if (names[i] === names[k]) {
+        names.splice(k, 1)
+      }
+    }
+  }
+  callback(names);
+}
 
 
 ////////// PROBLEM 6 //////////
